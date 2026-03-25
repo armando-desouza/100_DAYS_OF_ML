@@ -40,7 +40,7 @@
     Foco em dominar a sintaxe, estruturas de controle, estruturas de dados básicas e traduzir conceitos de Álgebra Linear, Estatística e Cálculo para o código.
 </p>
 
-- ✅ **[Projeto 01: Calculadora Interativa de Terminal](./MODULE01_Python_and_Basic_Mathematics\Project_01_Calculator\README.md)** Calculadora Interativa de Terminal (Em progresso 🏗️).
+- ✅ **[Projeto 01: Calculadora Interativa de Terminal](./MODULE01_Python_and_Basic_Mathematics/Project_01_Calculator/README.md)** Calculadora Interativa de Terminal (Em progresso 🏗️).
 - [ ] **Projeto 02:** Analisador de Texto e Frequência.
 - [ ] **Projeto 03:** Gerador e Validador de Senhas.
 - [ ] **Projeto 04:** Jogo de Adivinhação Numérica.
