@@ -8,7 +8,7 @@
   Desenvolver um script em Python capaz de receber um parágrafo de texto e extrair estatísticas cruciais: o número total de caracteres, o total de palavras e o Top 3 das palavras mais frequentes. O foco é praticar a manipulação de strings e o uso de estruturas de dados, como dicionários, para contagem e análise.
 </p>
 
-## ✨  Funcionalidades
+## ✨ Funcionalidades
 
 * **Normalização de Texto:** Converte todo o texto para minúsculas e remove pontuações indesejadas, garantindo uma contagem precisa (ex: "Olá!" e "olá" são contabilizados como a mesma palavra).
 * **Tokenização Básica:** Separa o texto em palavras individuais utilizando a função nativa <code>.split()</code>.

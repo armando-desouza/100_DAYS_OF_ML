@@ -42,11 +42,11 @@
 
 - ✅ **[Projeto 01: Calculadora Interativa de Terminal](./MODULE01_Python_and_Basic_Mathematics/Project_01_Calculator/README.md)** (Finalizado).
 - ✅ **[Projeto 02: Analisador de Dados](./MODULE01_Python_and_Basic_Mathematics/Project_02_Text_and_frequency_analyzer/README.md)** (Finalizado).
-- [ ] **Projeto 03:** Gerador e Validador de Senhas.
+- ✅ **[Projeto 03: Calculadora de Medidas Estatísticas (Estatística Básica)](./MODULE01_Python_and_Basic_Mathematics/Project_03_Statistics_Calculator/README.md)** (Finalizado).
 - [ ] **Projeto 04:** Jogo de Adivinhação Numérica.
 - [ ] **Projeto 05:** Sistema de Gerenciamento de Notas (Mini CRUD).
 - [ ] **Projeto 06:** Operador de Matrizes (Álgebra Linear).
-- [ ] **Projeto 07:** Calculadora de Medidas Estatísticas (Estatística Básica).
+- [ ] **Projeto 07:** Gerador e Validador de Senhas.
 - [ ] **Projeto 08:** Simulador da Lei dos Grandes Números (Probabilidade).
 - [ ] **Projeto 09:** Aproximador de Derivadas (Cálculo Numérico).
 - [ ] **Projeto 10:** Solucionador de Sistemas Lineares (Álgebra Linear).
@@ -65,5 +65,6 @@
 .
 ├── Modulo_01_Python_e_Matematica_Basica/
 │   ├── Projeto_01_Calculadora/
-│   └── Projeto_02_Analisador_Texto/
+│   ├── Projeto_02_Analisador_Texto/
+│   └── Projeto_03_Calculadora_Estatistica/
 └── README.md (Você está aqui)
