@@ -45,27 +45,28 @@ $$E = L \cdot \log_2(C)$$
 
 ### Fluxograma de Execução
 
-graph TD;
-    A[Início do Programa] --> B{Aguardando Input};
-    
-    B -- Digita Número (Tamanho) --> C{Tamanho >= 8?};
-    C -- Não --> D[Exibe Erro em Vermelho];
-    D --> B;
-    C -- Sim --> E[Garante 1 de cada tipo];
-    E --> F[Preenche o restante aleatoriamente];
-    F --> G[Embaralha array e une a string];
-    G --> H[Exibe Senha Gerada e Valida Automaticamente];
-    H --> B;
+```mermaid
+    flowchart TD
+        A[Início do Programa] --> B{Aguardando Input};
+        
+        B -- Digita Número (Tamanho) --> C{Tamanho >= 8?};
+        C -- Não --> D[Exibe Erro em Vermelho];
+        D --> B;
+        C -- Sim --> E[Garante 1 de cada tipo];
+        E --> F[Preenche o restante aleatoriamente];
+        F --> G[Embaralha array e une a string];
+        G --> H[Exibe Senha Gerada e Valida Automaticamente];
+        H --> B;
 
-    B -- 'validar' --> I[Pede Senha do Usuário];
-    I --> J{Analisa 4 Critérios};
-    J -- Possui Todos --> K[Retorna: Forte];
-    J -- Faltam Elementos --> L[Retorna: Fraca + Lista de Faltas];
-    K --> B;
-    L --> B;
+        B -- 'validar' --> I[Pede Senha do Usuário];
+        I --> J{Analisa 4 Critérios};
+        J -- Possui Todos --> K[Retorna: Forte];
+        J -- Faltam Elementos --> L[Retorna: Fraca + Lista de Faltas];
+        K --> B;
+        L --> B;
 
-    B -- 'sair' --> M[Encerra o Programa];
-
+        B -- 'sair' --> M[Encerra o Programa];
+```
 
 ## 🛠️ Como executar
 
