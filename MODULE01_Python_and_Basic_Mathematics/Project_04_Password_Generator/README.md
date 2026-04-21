@@ -35,6 +35,7 @@ $$N = C^L$$
 </p>
 
 * **Entropia ($E$):** Mede a imprevisibilidade de uma senha em bits. Quanto maior a entropia, mais tempo um computador levaria para adivinhar a senha num ataque de força bruta:
+
 $$E = L \cdot \log_2(C)$$
 
 <p
