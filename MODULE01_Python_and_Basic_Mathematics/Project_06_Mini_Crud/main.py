@@ -42,7 +42,7 @@ def main():
         opcao = input("Escolha uma opção: ")
         if opcao == '1':
             adicionar_aluno(sistema_notas)
-            
+
         elif opcao == '2':
             print("\n1. Ver todos os alunos.")
             print("2. Buscar aluno por ID.")
@@ -56,9 +56,12 @@ def main():
                 print("❌ Opção inválida.")
 
         elif opcao == '3':
-            print("\n[Em construção] Aqui vamos calcular as médias...")
+            calcular_medias(sistema_notas)
+
         elif opcao == '0':
-            print("\nEncerrando o sistema. Até logo! 👋")
+            salvar_dados(sistema_notas)
+            break
+
         else:
             print("\n❌ Opção inválida! Por favor, digite um número de 0 a 3.") 
 
@@ -122,6 +125,39 @@ def buscar_alunos(sistema_notas):
     else:
         print(f"\n ❌ Aluno com ID {id_busca} não encontrado no sistema.")
 
+def calcular_medias(sistema_notas):
+    print("\n =0=0= 🧮 MÉDIAS DOS ALUNOS =0=0= \n")
+
+    if not sistema_notas:
+        print("Nenhum aluno cadastrado ainda.")
+        return
+    
+    for id_aluno, dados in sistema_notas.items():
+        nome = dados['nome']
+        notas = dados['notas']
+
+        media = sum(notas) / len(notas)
+
+        print(f"ID: {id_aluno} | Nome: {nome} | Média: {media:.2f}")
+
+def salvar_dados(sistema_notas):
+    print("\n =0=0= 🛟 SALVANDO DADOS =0=0=\n")
+
+    with open('alunos.txt', 'w', encoding='utf-8') as arquivo:
+        lista_textos_alunos = []
+
+        for id_aluno, dados in sistema_notas.items():
+            nome = dados['nome']
+            notas = dados['notas']
+
+            linha_aluno = f'{id_aluno},{nome},{notas[0]},{notas[1]},{notas[2]}'
+
+            lista_textos_alunos.append(linha_aluno)
+
+        texto_final = "|".join(lista_textos_alunos)
+        arquivo.write(texto_final)
+
+    print("💾 Dados salvos com sucesso no arquivo 'alunos.txt'!")
 if __name__ == "__main__":
     main()
 

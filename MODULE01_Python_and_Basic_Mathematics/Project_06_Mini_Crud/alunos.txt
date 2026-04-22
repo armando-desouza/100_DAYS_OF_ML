@@ -1,0 +1,1 @@
+1,Albert Einstein,10.0,10.0,10.0|2,Marie Curie,8.0,9.5,7.5|3,Nikola Tesla,9.0,9.5,5.45
