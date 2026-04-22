@@ -26,5 +26,32 @@ def carregar_dados():
 
     return alunos
 
-sistema_notas = carregar_dados()
-print("Sistema iniciado! Dados carregados: ", sistema_notas)
+def exibir_menu():
+    print("\n=0=0= 🎒 SISTEMA DE GERENCIAMENTO DE NOTAS =0=0=\n")
+    print("1. Adicionar Aluno.")
+    print("2. Exibir/Buscar Aluno.")
+    print("3. Calcular Médias.")
+    print("0. Sair e Salvar.")
+    print("\n=0=0=0=0=0=0=0=0=0=0=0=0=0=0=0=0=0=0=0=0=0=0=0=0=\n")
+
+def main():
+    sistema_notas = carregar_dados()
+
+    while True:
+        exibir_menu()
+        opcao = input("Escolha uma opção: ")
+        
+        if opcao == 1:
+            print("\n[Em construção] Aqui vamos adicionar um aluno...")
+        elif opcao == 2:
+            print("\n[Em construção] Aqui vamos exibir/buscar alunos...")
+        elif opcao == 3:
+            print("\n[Em construção] Aqui vamos calcular as médias...")
+        elif opcao == 0:
+            print("\nEncerrando o sistema. Até logo! 👋")
+        else:
+            print("\n❌ Opção inválida! Por favor, digite um número de 0 a 3.") 
+
+
+if __name__ == "__main__":
+    main()
