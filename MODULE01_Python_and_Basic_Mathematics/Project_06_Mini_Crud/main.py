@@ -42,8 +42,19 @@ def main():
         opcao = input("Escolha uma opção: ")
         if opcao == '1':
             adicionar_aluno(sistema_notas)
+            
         elif opcao == '2':
-            print("\n[Em construção] Aqui vamos exibir/buscar alunos...")
+            print("\n1. Ver todos os alunos.")
+            print("2. Buscar aluno por ID.")
+            sub_opcao = input("Escolha: ")
+
+            if sub_opcao == '1':
+                exibir_alunos(sistema_notas)
+            elif sub_opcao == '2':
+                buscar_alunos(sistema_notas)
+            else:
+                print("❌ Opção inválida.")
+
         elif opcao == '3':
             print("\n[Em construção] Aqui vamos calcular as médias...")
         elif opcao == '0':
@@ -79,10 +90,39 @@ def adicionar_aluno(sistema_notas):
 
     print(f"✅ Aluno '{nome}' adicionado com sucesso! (ID gerado: {novo_id}).")
 
+def exibir_alunos(sistema_notas):
+    print("\n =0=0= 📋 LISTA DE ALUNOS =0=0=\n")
 
+    if not sistema_notas:
+        print("Nenhum aluno cadastrado ainda.")
+        return
+    
+    for id_aluno, dados in sistema_notas.items():
+        nome = dados['nome']
+        notas = dados['notas']
+        print(f"ID: {id_aluno} | Nome: {nome} | Notas: {notas}")
 
+def buscar_alunos(sistema_notas):
+    print("\n =0=0= 🔍 BUSCAR ALUNOS =0=0=\n")
 
-
+    if not sistema_notas: 
+        print("Nenhum aluno cadastrado ainda.")
+        return
+    
+    try:
+        id_busca = int(input("Digite o ID do aluno que deseja buscar: "))
+    except ValueError:
+        print("❌ Erro: O ID deve ser um número inteiro.")
+        return
+    
+    if id_busca in sistema_notas:
+        aluno = sistema_notas[id_busca]
+        print(f"\n ✅ Aluno encontrado!")
+        print(f"ID: {id_busca} | NOME: {aluno['nome']} | NOTAS: {aluno['notas']}")
+    else:
+        print(f"\n ❌ Aluno com ID {id_busca} não encontrado no sistema.")
 
 if __name__ == "__main__":
     main()
+
+    
