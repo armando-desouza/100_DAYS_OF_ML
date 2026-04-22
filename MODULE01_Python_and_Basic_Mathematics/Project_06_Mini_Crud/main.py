@@ -1,3 +1,11 @@
+from colorama import init, Fore, Style
+import os
+
+init(autoreset=True)
+
+def limpar_tela():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
 def carregar_dados():
     alunos = {}
 
@@ -15,7 +23,7 @@ def carregar_dados():
                         id_aluno = int(dados[0])
                         nome = dados[1]
 
-                        notas = [float(notas[2]), float(dados[3]), float(dados[4])]
+                        notas = [float(dados[2]), float(dados[3]), float(dados[4])]
 
                         alunos[id_aluno] = {
                             'nome': nome,
@@ -27,19 +35,21 @@ def carregar_dados():
     return alunos
 
 def exibir_menu():
-    print("\n=0=0= 🎒 SISTEMA DE GERENCIAMENTO DE NOTAS =0=0=\n")
-    print("1. Adicionar Aluno.")
-    print("2. Exibir/Buscar Aluno.")
-    print("3. Calcular Médias.")
-    print("0. Sair e Salvar.")
-    print("\n=0=0=0=0=0=0=0=0=0=0=0=0=0=0=0=0=0=0=0=0=0=0=0=0=\n")
+    print(f"\n{Fore.YELLOW}=0=0= 🎒 SISTEMA DE GERENCIAMENTO DE NOTAS =0=0=\n")
+    print(f"{Fore.GREEN}1. Adicionar Aluno.")
+    print(f"{Fore.GREEN}2. Exibir/Buscar Aluno.")
+    print(f"{Fore.GREEN}3. Calcular Médias.")
+    print(f"{Fore.GREEN}0. Sair e Salvar.")
+    print(f"\n{Fore.YELLOW}=0=0=0=0=0=0=0=0=0=0=0=0=0=0=0=0=0=0=0=0=0=0=0=0=\n")
 
 def main():
     sistema_notas = carregar_dados()
 
     while True:
+        limpar_tela()
         exibir_menu()
-        opcao = input("Escolha uma opção: ")
+        
+        opcao = input(f"{Fore.CYAN}Escolha uma opção: ")
         if opcao == '1':
             adicionar_aluno(sistema_notas)
 
@@ -63,10 +73,11 @@ def main():
             break
 
         else:
-            print("\n❌ Opção inválida! Por favor, digite um número de 0 a 3.") 
+            print(f"\n{Fore.RED}❌ Opção inválida! Por favor, digite um número de 0 a 3.") 
+    
 
 def adicionar_aluno(sistema_notas):
-    print("\n =0=0= ➕ ADICIONAR NOVO ALUNO =0=0=\n")
+    print(f"\n{Fore.YELLOW} =0=0= ➕ ADICIONAR NOVO ALUNO =0=0=\n")
     nome = input("Digite o nome do aluno: ")
 
     try:
@@ -91,10 +102,10 @@ def adicionar_aluno(sistema_notas):
         ]
     }
 
-    print(f"✅ Aluno '{nome}' adicionado com sucesso! (ID gerado: {novo_id}).")
+    print(f"{Fore.YELLOW}✅ Aluno '{nome}' adicionado com sucesso! (ID gerado: {novo_id}).")
 
 def exibir_alunos(sistema_notas):
-    print("\n =0=0= 📋 LISTA DE ALUNOS =0=0=\n")
+    print(f"\n{Fore.YELLOW} =0=0= 📋 LISTA DE ALUNOS =0=0=\n")
 
     if not sistema_notas:
         print("Nenhum aluno cadastrado ainda.")
@@ -106,7 +117,7 @@ def exibir_alunos(sistema_notas):
         print(f"ID: {id_aluno} | Nome: {nome} | Notas: {notas}")
 
 def buscar_alunos(sistema_notas):
-    print("\n =0=0= 🔍 BUSCAR ALUNOS =0=0=\n")
+    print(f"\n{Fore.YELLOW} =0=0= 🔍 BUSCAR ALUNOS =0=0=\n")
 
     if not sistema_notas: 
         print("Nenhum aluno cadastrado ainda.")
@@ -126,7 +137,7 @@ def buscar_alunos(sistema_notas):
         print(f"\n ❌ Aluno com ID {id_busca} não encontrado no sistema.")
 
 def calcular_medias(sistema_notas):
-    print("\n =0=0= 🧮 MÉDIAS DOS ALUNOS =0=0= \n")
+    print(f"\n{Fore.YELLOW} =0=0= 🧮 MÉDIAS DOS ALUNOS =0=0= \n")
 
     if not sistema_notas:
         print("Nenhum aluno cadastrado ainda.")
@@ -141,7 +152,7 @@ def calcular_medias(sistema_notas):
         print(f"ID: {id_aluno} | Nome: {nome} | Média: {media:.2f}")
 
 def salvar_dados(sistema_notas):
-    print("\n =0=0= 🛟 SALVANDO DADOS =0=0=\n")
+    print(f"\n{Fore.YELLOW} =0=0= 🛟 SALVANDO DADOS =0=0=\n")
 
     with open('alunos.txt', 'w', encoding='utf-8') as arquivo:
         lista_textos_alunos = []
@@ -157,7 +168,8 @@ def salvar_dados(sistema_notas):
         texto_final = "|".join(lista_textos_alunos)
         arquivo.write(texto_final)
 
-    print("💾 Dados salvos com sucesso no arquivo 'alunos.txt'!")
+    print(f"{Fore.CYAN}💾 Dados salvos com sucesso no arquivo 'alunos.txt'!")
+
 if __name__ == "__main__":
     main()
 
