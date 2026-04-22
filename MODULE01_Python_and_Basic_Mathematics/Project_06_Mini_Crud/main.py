@@ -40,17 +40,48 @@ def main():
     while True:
         exibir_menu()
         opcao = input("Escolha uma opção: ")
-        
-        if opcao == 1:
-            print("\n[Em construção] Aqui vamos adicionar um aluno...")
-        elif opcao == 2:
+        if opcao == '1':
+            adicionar_aluno(sistema_notas)
+        elif opcao == '2':
             print("\n[Em construção] Aqui vamos exibir/buscar alunos...")
-        elif opcao == 3:
+        elif opcao == '3':
             print("\n[Em construção] Aqui vamos calcular as médias...")
-        elif opcao == 0:
+        elif opcao == '0':
             print("\nEncerrando o sistema. Até logo! 👋")
         else:
             print("\n❌ Opção inválida! Por favor, digite um número de 0 a 3.") 
+
+def adicionar_aluno(sistema_notas):
+    print("\n =0=0= ➕ ADICIONAR NOVO ALUNO =0=0=\n")
+    nome = input("Digite o nome do aluno: ")
+
+    try:
+        nota1 = float(input("Digite a 1ª nota: "))
+        nota2 = float(input("Digite a 2ª nota: "))
+        nota3 = float(input("Digite a 3ª nota: "))
+    except ValueError:
+        print("❌ Erro: Por favor, digite apenas números para as notas (use ponto para casas decimais, ex: 9.5).")
+        return
+    
+    if sistema_notas:
+        novo_id = max(sistema_notas.keys()) + 1
+    else:
+        novo_id = 1
+
+    sistema_notas[novo_id] = {
+        'nome': nome,
+        'notas': [
+            nota1,
+            nota2,
+            nota3
+        ]
+    }
+
+    print(f"✅ Aluno '{nome}' adicionado com sucesso! (ID gerado: {novo_id}).")
+
+
+
+
 
 
 if __name__ == "__main__":
