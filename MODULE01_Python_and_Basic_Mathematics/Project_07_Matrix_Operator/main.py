@@ -89,7 +89,3 @@ def main():
 if __name__ == "__main__":
     main()
 
-# minha_matriz = ler_matriz("Matriz A")
-
-# print("Nossa Matriz Inicial:")
-# imprimir_matriz(minha_matriz)
